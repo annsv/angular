@@ -1,0 +1,17 @@
+<section appHighlight *ngIf="user">
+  <header > 
+    <a [routerLink]="['/user', user.id]">{{ user.id }} - {{ user.name | circus }}
+    </a>
+  </header>
+<section>
+  <div>
+    <span *ngIf="user.status">Logged In</span>
+  </div>
+  <div>    {{ user.birthdate | date: 'MM-dd-yyyy' }}</div>
+</section>
+<footer [ngSwitch]="user.role">
+  <span *ngSwitchCase="'moder'">{{ user.role }}</span>
+  <span *ngSwitchCase="'admin'">{{ user.role }}</span>
+  <span *ngSwitchCase="'user'">{{ user.role }}</span>
+</footer>
+</section>
