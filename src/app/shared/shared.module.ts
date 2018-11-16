@@ -1,9 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { CircusPipe } from './pipes/circus/circus.pipe';
-import { RouterModule } from '@angular/router';
 import { HighlightDirective } from './directives/highlight/highlight.directive';
-import { UserCardComponent } from './component/card/card.component';
+import { CircusPipe } from './pipes/circus/circus.pipe';
+import { UserCardComponent } from './components/user-card/user-card.component';
+import { RouterModule } from '@angular/router';
+import { CardComponent } from './components/card/card.component';
+import { TemplateDirective } from './directives/template/template.directive';
 
 @NgModule({
   imports: [
@@ -13,13 +15,16 @@ import { UserCardComponent } from './component/card/card.component';
   declarations: [
     HighlightDirective,
     CircusPipe,
-    UserCardComponent
+    UserCardComponent,
+    CardComponent,
+    TemplateDirective
   ],
-  exports: [   
+  exports: [
     HighlightDirective,
+    UserCardComponent,
     CircusPipe,
-    UserCardComponent
-
+    CardComponent,
+    TemplateDirective
   ]
 })
 export class SharedModule { }

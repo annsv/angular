@@ -6,15 +6,9 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class CircusPipe implements PipeTransform {
 
   transform(value: any, args?: any): any {
-   
-    value = value.toLowerCase();
-    return value.split('')
-      .map( (element, index) => {
-          if (index%2) {
-            return element.toUpperCase();
-          } else { return element; }
-      })
-      .join('');    
+    return value ? value.split('')
+      .map((val, i) => i % 2 ? val : val.toUpperCase())
+      .join('') : value;
   }
 
 }

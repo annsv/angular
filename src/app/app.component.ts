@@ -5,13 +5,12 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit{
-  title = 'angular-prj';
-  
-  ngOnInit(): void{
-    console.log("test");
+export class AppComponent implements OnInit {
+  title = 'test-angular';
+
+  ngOnInit(): void {
     setTimeout(() => {
-      this.title = 'Hello world';
+      this.title = 'Hello world!';
     }, 1000);
   }
 }

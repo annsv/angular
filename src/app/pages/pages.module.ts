@@ -10,10 +10,9 @@ import { UserModule } from './user/user.module';
     DashboardModule,
     UserModule
   ],
-  exports:[
+  declarations: [],
+  exports: [
     RouterModule
-  ],
-
-  declarations: []
+  ]
 })
 export class PagesModule { }

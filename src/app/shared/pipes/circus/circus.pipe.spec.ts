@@ -1,4 +1,4 @@
-import { CircusPipe } from '../circus/circus.pipe';
+import { CircusPipe } from './circus.pipe';
 
 describe('CircusPipe', () => {
   it('create an instance', () => {

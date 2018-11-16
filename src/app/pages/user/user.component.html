@@ -1,19 +1,13 @@
-  <section class="card-wide mdl-card mdl-shadow--2dp">
-    <header class="mdl-card__title">
-      <h2 class="mdl-card__title-text">{{ user.name | circus }}</h2>
-    </header>
-    <article class="mdl-card__supporting-text">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-      Mauris sagittis pellentesque lacus eleifend lacinia...
-    </article>
-    <footer class="mdl-card__actions mdl-card--border">
-      <span class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
-        {{ user.role }}         
-      </span>
-    </footer>
-    <div class="mdl-card__menu">
-      <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
-        <i class="material-icons">share</i>
-      </button>
-    </div>
-  </section>
+<app-user-card [user]="user">
+    <ng-template appTemplate="header">
+        <h1>{{ user.name | circus }}</h1>
+    </ng-template>
+    <ng-template appTemplate="body">
+        <div>
+            <span *ngIf="user.loggedIn">Logged In</span>
+        </div>
+        <div>
+            {{ user.birthdate }}
+        </div>
+    </ng-template>    
+</app-user-card>

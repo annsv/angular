@@ -1,0 +1,18 @@
+<section appHighlight *ngIf="user">
+  <header>
+    <h1>{{ user.id }} - {{ user.name | circus }}</h1>
+  </header>
+  <section>
+    <div>
+      <span *ngIf="user.loggedIn">Logged In</span>
+    </div>
+    <div>
+      {{ user.birthdate | date: 'MM-dd-yyyy' }}
+    </div>
+  </section>
+  <footer [ngSwitch]="user.role">
+    <span *ngSwitchCase="'moder'">Moder</span>
+    <span *ngSwitchCase="'admin'">Admin</span>
+    <span *ngSwitchCase="'user'">User</span>
+  </footer>
+</section>

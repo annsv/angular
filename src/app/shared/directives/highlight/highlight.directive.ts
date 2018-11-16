@@ -1,4 +1,4 @@
-import { Directive, HostListener, HostBinding } from '@angular/core';
+import { Directive, ElementRef, OnInit, OnDestroy, HostListener, HostBinding } from '@angular/core';
 
 @Directive({
   selector: '[appHighlight]'
@@ -6,19 +6,18 @@ import { Directive, HostListener, HostBinding } from '@angular/core';
 export class HighlightDirective {
 
   @HostListener('mouseover')
-  handleMouseOver(el){
+  handleMouseOver(el) {
     this.backgroundColor = 'red';
-  }
+  };
 
   @HostListener('mouseout')
-  handleMouseOut(el){
+  handleMouseOut(el) {
     this.backgroundColor = 'transparent';
   }
 
   @HostBinding('style.backgroundColor')
   backgroundColor = 'transparent';
 
-  constructor() { 
-  }
+  constructor() { }
 
 }

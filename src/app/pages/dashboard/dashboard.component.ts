@@ -1,17 +1,15 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
-import { UserService } from 'src/app/core/services/user.service';
-import { User } from 'src/app/core/models/user.model';
-import { Subscription } from 'rxjs';
+import { Component, OnInit } from '@angular/core';
+import { UserService } from '../../core/services/user.service';
+import { User } from '../../core/models/user.model';
 
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.scss']
 })
+export class DashboardComponent implements OnInit {
 
-export class DashboardComponent implements OnInit, OnDestroy {
-  users: User[]= [];
-  user$: Subscription;
+  users: User[] = [];
 
   constructor(
     private userService: UserService
@@ -19,14 +17,10 @@ export class DashboardComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
 
-    this.user$ = this.userService.getUsers()
-    .subscribe(users => {
-      this.users = users;
-    });
+    this.userService.getUsers()
+      .subscribe(data => {
+        this.users = data;
+      });
 
-  }
-
-  ngOnDestroy() {
-    this.user$.unsubscribe();
   }
 }

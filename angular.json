@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "angular-prj": {
+    "test-angular": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/angular-prj",
+            "outputPath": "dist/test-angular",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -61,18 +61,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "angular-prj:build"
+            "browserTarget": "test-angular:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "angular-prj:build:production"
+              "browserTarget": "test-angular:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "angular-prj:build"
+            "browserTarget": "test-angular:build"
           }
         },
         "test": {
@@ -106,7 +106,7 @@
         }
       }
     },
-    "angular-prj-e2e": {
+    "test-angular-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "prefix": "",
@@ -115,11 +115,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "angular-prj:serve"
+            "devServerTarget": "test-angular:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "angular-prj:serve:production"
+              "devServerTarget": "test-angular:serve:production"
             }
           }
         },
@@ -135,5 +135,5 @@
       }
     }
   },
-  "defaultProject": "angular-prj"
+  "defaultProject": "test-angular"
 }
