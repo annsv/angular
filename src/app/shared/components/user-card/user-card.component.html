@@ -1,18 +1,26 @@
-<section appHighlight *ngIf="user">
-  <header>
-    <h1>{{ user.id }} - {{ user.name | circus }}</h1>
-  </header>
-  <section>
-    <div>
-      <span *ngIf="user.loggedIn">Logged In</span>
-    </div>
-    <div>
-      {{ user.birthdate | date: 'MM-dd-yyyy' }}
-    </div>
-  </section>
-  <footer [ngSwitch]="user.role">
-    <span *ngSwitchCase="'moder'">Moder</span>
-    <span *ngSwitchCase="'admin'">Admin</span>
-    <span *ngSwitchCase="'user'">User</span>
-  </footer>
-</section>
+<mat-card *ngIf="user" class="card">  
+  <mat-card-header>
+      <div mat-card-avatar class="header-image"></div>
+      <mat-card-title>{{ user.name | circus }}</mat-card-title>
+      <mat-card-subtitle>#{{ user.id }}</mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image src="../assets/users/user1.jpg" alt="Photo of a Shiba Inu">    
+  <mat-card-content>
+      <div>
+      </div>
+      <div>
+          Gender: {{ user.gender }}<br>
+          Birth year: {{ user.birth_year }}<br>
+          Mass: {{ user.mass }}<br>
+          Height: {{ user.height }}<br>
+          Hair color: {{ user.hair_color }}<br>
+          Skin: {{ user.skin_color }}<br>
+          Eyes color: {{ user.eye_color }}
+
+      </div>
+  </mat-card-content>
+  <mat-card-actions>
+      <button mat-button>LIKE</button>
+      <button mat-button>SHARE</button>
+  </mat-card-actions>
+</mat-card> 

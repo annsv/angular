@@ -10,7 +10,7 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
     setTimeout(() => {
-      this.title = 'Hello world!';
+      this.title = 'Star Wars';
     }, 1000);
   }
 }

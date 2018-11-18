@@ -1,13 +1,1 @@
-<app-user-card [user]="user">
-    <ng-template appTemplate="header">
-        <h1>{{ user.name | circus }}</h1>
-    </ng-template>
-    <ng-template appTemplate="body">
-        <div>
-            <span *ngIf="user.loggedIn">Logged In</span>
-        </div>
-        <div>
-            {{ user.birthdate }}
-        </div>
-    </ng-template>    
-</app-user-card>
+<app-user-card [user]="user"></app-user-card>

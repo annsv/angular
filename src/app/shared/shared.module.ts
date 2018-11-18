@@ -6,11 +6,37 @@ import { UserCardComponent } from './components/user-card/user-card.component';
 import { RouterModule } from '@angular/router';
 import { CardComponent } from './components/card/card.component';
 import { TemplateDirective } from './directives/template/template.directive';
+import {
+  MatBadgeModule,
+  MatBottomSheetModule,
+  MatButtonModule,
+  MatButtonToggleModule,
+  MatCardModule,
+  MatCheckboxModule,
+  MatDividerModule,
+  MatGridListModule,
+  MatIconModule,
+  MatInputModule,
+  MatListModule,
+  MatMenuModule
+} from '@angular/material';
 
 @NgModule({
   imports: [
     CommonModule,
-    RouterModule
+    RouterModule,
+    MatBadgeModule,
+    MatBottomSheetModule,
+    MatButtonModule,
+    MatButtonToggleModule,
+    MatCardModule,
+    MatCheckboxModule,
+    MatDividerModule,
+    MatGridListModule,
+    MatIconModule,
+    MatInputModule,
+    MatListModule,
+    MatMenuModule
   ],
   declarations: [
     HighlightDirective,
@@ -24,7 +50,19 @@ import { TemplateDirective } from './directives/template/template.directive';
     UserCardComponent,
     CircusPipe,
     CardComponent,
-    TemplateDirective
+    TemplateDirective,
+    MatBadgeModule,
+    MatBottomSheetModule,
+    MatButtonModule,
+    MatButtonToggleModule,
+    MatCardModule,
+    MatCheckboxModule,
+    MatDividerModule,
+    MatGridListModule,
+    MatIconModule,
+    MatInputModule,
+    MatListModule,
+    MatMenuModule
   ]
 })
 export class SharedModule { }

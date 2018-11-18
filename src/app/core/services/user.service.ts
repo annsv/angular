@@ -19,7 +19,7 @@ export class UserService {
       .pipe(
         map((data: any) => {
           return data.results.map((jedi, index) =>
-            new User(index + 1, jedi.name, jedi.status, jedi.birth_year))
+            new User(index + 1, jedi.name, jedi.gender, jedi.birth_year))
         })
       );
   }
@@ -27,7 +27,7 @@ export class UserService {
     return this.httpClient.get(`${this.resourceUrl}${index}`)
     .pipe(
       map((jedi: any) => {
-        return new User(index, jedi.name, jedi.status, jedi.birth_year)
+        return new User(index, jedi.name, jedi.gender, jedi.birth_year, jedi.mass, jedi.height, jedi.hair_color, jedi.skin_color, jedi.eye_color);
       })        
     )
   }
